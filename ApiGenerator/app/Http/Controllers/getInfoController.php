@@ -7,7 +7,7 @@ use DB;
 
 class getInfoController extends Controller
 {
-    //
+    //echo hola
     
     public function getInfo(Request $request)
     {
