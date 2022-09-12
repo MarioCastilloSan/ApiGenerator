@@ -9,25 +9,12 @@
 <body>
     <h1>ApiGenerator</h1>
     <p>ApiGenerator is a package for Laravel that generates a REST API for your models.</p>
-
-    <table>
-        <thead>
-            <tr>
-                <th>TABLE_CATALOG </th>
-                <th>TABLE_SCHEMA </th>
-                <th>TABLE_NAME</th>
-                <th>TABLE_TYPE</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($tables as $table)
-                <tr>
-                    <td>{{ $table->TABLE_CATALOG }}</td>
-                    <td>{{ $table->TABLE_SCHEMA }}</td>
-                    <td>{{ $table->TABLE_NAME }}</td>
-                    <td>{{ $table->TABLE_TYPE }}</td>
-                </tr>
-            @endforeach
-    </table>
+    <h1>TABLES</h1>
+    {{$tables}};
+    <h1>VIEWS</h1>
+    {{$View}};
+    <h1>STORED PROCEDURES</h1>
+    {{$SProcedure}};
+    
 </body>
 </html>
