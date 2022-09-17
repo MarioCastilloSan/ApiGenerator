@@ -15,6 +15,23 @@ This moudle would ensure the selection of objects(Tables,views,stored procedures
 *Apply security concepts in APIs using Token or API-Key for the authorization of calls or critical procedures and identification of the client that executes the API.
 * A module that allows the management of REST APIs based on the objects found in the database.
 
+
+## Technologies involved 👩‍💻
+
+```
+Git
+POSTAMN
+Laravel
+PHP7
+SQLServer 2008R2
+jwt-auth
+```
+## RUN PROJECT
+```py
+    composer install
+    php artisan serve
+    php artisan migrate #in case you don't have an user table use  to migrate your model and generate it.
+```
 ## Authors ✒️
 
 _Developer_
@@ -40,23 +57,6 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
 
-
-## Technologies involved 👩‍💻
-
-```
-Git
-POSTAMN
-Laravel
-PHP7
-SQLServer 2008R2
-jwt-auth
-```
-## RUN PROJECT
-```py
-    composer install
-    php artisan serve
-    php artisan migrate #in case you don't have an user table use  to migrate your model and generate it.
-```
 
 
 
@@ -90,7 +90,7 @@ jwt-auth
 ```py
     composer install
     php artisan serve
-    php artisan migrate # En case que no se posea una tabla de usuario en la estructura de su base de datos 
+    php artisan migrate # En caso que no se posea una tabla de usuario en la estructura de su base de datos 
                         # usarpara generarla en su modelo.
 ```
 
