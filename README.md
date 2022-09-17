@@ -52,10 +52,10 @@ SQLServer 2008R2
 jwt-auth
 ```
 ## RUN PROJECT
-```cmd
+```py
     composer install
     php artisan serve
-    in case you don't have an user table use  php artisan migrate to migrate your model and generate it.
+    php artisan migrate #in case you don't have an user table use  to migrate your model and generate it.
 ```
 
 
@@ -87,10 +87,11 @@ jwt-auth
 ```
 
 ## Para iniciar el proyecto.
-```cmd
+```py
     composer install
     php artisan serve
-    en case que no se posea una tabla de usuario en la estructura de su base de datos usar php artisan migrate  para generarla en su modelo.
+    php artisan migrate # En case que no se posea una tabla de usuario en la estructura de su base de datos 
+                        # usarpara generarla en su modelo.
 ```
 
 
