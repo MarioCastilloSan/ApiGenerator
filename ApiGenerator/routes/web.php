@@ -19,7 +19,7 @@ use App\Http\Controllers\getInfoController;
 // });
 
 Route::get('/',[getInfoController::class, 'getInfo']);
-Route::get('/filter',[getInfoController::class, 'filterData']);
+
 
 
 // PHP INFO PAGE --- Mario esto fue necesario para verificar si los driver de sqlsrv estaban instalados, cosa que no, tuve que hacerlo manual
