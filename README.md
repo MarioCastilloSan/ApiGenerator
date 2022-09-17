@@ -2,7 +2,7 @@
 <h1>ApiGenerator</h1>
 
 --------------------------------------------------------
-##English Documentation.
+## English Documentation.
 
 ## Resume 📚
 This moudle would ensure the selection of objects(Tables,views,stored procedures) from a database  and obtain its properties(columns, parameters, etc.). This must require auth tokens to generate the CRUD methods  in JSON format for the REST API. This module should also administer already created APIs in somekind of repository allowing it accesss with it s corresponding documentation.
@@ -60,7 +60,7 @@ jwt-auth
 
 
 
-##Documentacion Español.
+## Documentacion Español.
 ## Resumen 📚
 El módulo permitirá seleccionar objetos (Tablas, vistas, procedimientosalmacenados) dentro de una base de datos y obtener sus propiedades (columnas, parámetros, etc.).En función de ello y de los permisos que tenga generar los métodos respectivos para el CRUD enformato JSON para la API REST.El modulo debe administrar además las APIs ya creadas en algún tipo de repositorio permitiendoacceder a las APIS disponibles, sus parámetros y sus salidas.
 
