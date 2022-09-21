@@ -19,6 +19,8 @@ use App\Http\Controllers\getInfoController;
 // });
 
 Route::get('/',[getInfoController::class, 'getInfo']);
+Route::get('/filter',[getInfoController::class, 'filterData']);
+Route::get('/view',[getInfoController::class, 'returnData']);
 
 
 

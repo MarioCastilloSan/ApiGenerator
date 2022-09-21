@@ -35,3 +35,5 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::get('/tables',[tablesController::class, 'index']);
 Route::get('/routines',[routinesController::class, 'index']);
 Route::get('/views',[viewController::class, 'index']);
+Route::get('/filter',[getInfoController::class, 'filterData']);
+Route::get('/view',[getInfoController::class, 'returnData']);
