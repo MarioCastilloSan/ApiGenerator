@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\InformationSchemaTables;
+use App\Http\Resources\TablesResource;
 
 class tablesController extends Controller
 {
@@ -14,9 +15,10 @@ class tablesController extends Controller
         $this->middleware('auth:api');
     }
 
-    public function index(){
+    public static  function index(){
         $tables = InformationSchemaTables::All()
         ->where('TABLE_TYPE', 'BASE TABLE');
-        return  $tables;
+        
+        return  TablesResource::collection($tables);
     }
 }

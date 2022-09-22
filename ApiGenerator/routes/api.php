@@ -2,23 +2,13 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\getInfoController;
 use App\Http\Controllers\tablesController;
 use App\Http\Controllers\routinesController;
 use App\Http\Controllers\viewController;
-use App\Http\Controllers\AuthController;
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
+// use App\Http\Controllers\AuthController;
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+
+Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
@@ -27,13 +17,17 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 //API LOGIN AND REGISTER USER FOR TOKEN
-Route::post('/login', [AuthController::class, 'login']);
-Route::post('/register', [AuthController::class, 'register']);
+Route::post('login', 'AuthController@login');
+Route::post('register', 'AuthController@register');
+
 
 // API GET ROUTES [tables,views,routines]
 
-Route::get('/tables',[tablesController::class, 'index']);
-Route::get('/routines',[routinesController::class, 'index']);
-Route::get('/views',[viewController::class, 'index']);
-Route::get('/filter',[getInfoController::class, 'filterData']);
-Route::get('/view',[getInfoController::class, 'returnData']);
+Route::resource('tables', 'tablesController',
+                ['only' => ['index']]);
+
+Route::resource('routines', 'routinesController',
+                ['only' => ['index']]);
+
+Route::resource('views', 'viewController',
+                ['only' => ['index']]);
