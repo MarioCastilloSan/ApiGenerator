@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\InformationSchemaViews;
+use App\Http\Resources\ViewResource;
 
 class viewController extends Controller
 {
@@ -14,6 +15,7 @@ class viewController extends Controller
     
     public function index(){
         $views = InformationSchemaViews::All();
-        return  $views;
+
+        return  ViewResource::collection($views);
     }
 }

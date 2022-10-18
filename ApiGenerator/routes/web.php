@@ -1,8 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\getInfoController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,15 +11,14 @@ use App\Http\Controllers\getInfoController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-Route::get('/',[getInfoController::class, 'getInfo']);
+Route::get('/', function () {
+    return view('welcome');
+});
 
 
-
-// PHP INFO PAGE --- Mario esto fue necesario para verificar si los driver de sqlsrv estaban instalados, cosa que no, tuve que hacerlo manual
 Route::get('phpinfo', function () {
     phpinfo();
 })->name('phpmyinfo');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
