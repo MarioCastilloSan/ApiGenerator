@@ -3,6 +3,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\apicontroller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,4 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
 Route::resource('/cliente',ClienteController::class);
+Route::resource('/apigen',apicontroller::class);
+return redirect()->to('/apigen');

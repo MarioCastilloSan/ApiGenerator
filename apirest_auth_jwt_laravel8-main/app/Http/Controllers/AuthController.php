@@ -16,7 +16,10 @@ class AuthController extends Controller
      *
      * @return void
      */
-    
+    public function __construct()
+    {
+        $this->middleware('auth:api', ['except' => ['login', 'register']]);
+    }
 
     /**
      * Get a JWT via given credentials.
@@ -99,7 +102,7 @@ class AuthController extends Controller
         ));
 
         return response()->json([
-            'message' => 'Te registraste uwu',
+            'message' => 'Te registraste!',
             'user' => $user
         ], 201);
     }
