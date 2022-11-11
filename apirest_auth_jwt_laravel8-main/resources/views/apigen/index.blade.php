@@ -83,7 +83,7 @@
         </thead>
         <tr>
             @foreach ($idc as $c)
-        <td id="tdv" scope="row"><input type="checkbox" name="opciones1" class="btn btn-primary" value="{{$c->id}}">{{$c->id}}</td>
+        <td id="tdv" scope="row"><input type="checkbox" name="opciones1" class="btn btn-primary" value="{{$idc}}">{{$c->id}}</td>
             
         </tr>
         @endforeach
@@ -112,7 +112,7 @@
         </thead>
         <tr>
             @foreach ($idv as $v)
-        <td id="tdv" scope="row"><input type="checkbox" name="opciones2" class="btn btn-primary" value="{{$v->id}}">{{$v->id}}</td>
+        <td id="tdv" scope="row"><input type="checkbox" name="opciones2" class="btn btn-primary" value="{{$idv}}" value2="{{$v->nombre}}">{{$v->id}}</td>
             
         </tr>
         @endforeach
@@ -145,7 +145,7 @@
             </thead>
             <tr>
                 @foreach ($idp as $p)
-            <td id="tdv" scope="row"><input type="checkbox" name="opciones3" class="btn btn-primary" value="{{$p->id}}">{{$p->id}}</td>
+            <td id="tdv" scope="row"><input type="checkbox" name="opciones3" class="btn btn-primary" value="{{$idp}}">{{$p->id}}</td>
                 
             </tr>
             @endforeach
@@ -162,24 +162,65 @@
    
    
    
+   </div>
 
-   <script>$(document).ready(function () {
+<div id="click">
+
+       <button id="btnEnviar">Generar API</button>
+    
+   </div>
+
+<div id="itse">
+  
+
+<table class="table">
+   <thead class="thead-dark">
+    <tr>
+      <th scope="col">Items selected</th>
+    </tr>
+   </table>
+   </div>
+<div id="apigenerada">
+<h6>API generada</h6>
+
+<textarea name="texto" placeholder=" "></textarea>
+
+
+
+
+
+</div>
+        </div>
+    </body>
+</html>
+   <script>
+   $(document).ready(function () {
    
     
     $(":checkbox").change(function () {
       
-        
+      
+    
         
       
       
       // definir un arreglo
       var selected = [];
       $(":checkbox[name=opciones1]").each(function () {
-          if (this.checked) {
+          if (this.checked) 
+          
               // agregar cada elemento.
               selected.push("Cliente_ID: "+$(this).val());
-          }
+
+
+              
+      
+              
+          
       });
+      
+
+
       $(":checkbox[name=opciones2]").each(function () {
           if (this.checked) {
               // agregar cada elemento.
@@ -213,34 +254,41 @@
          }
          
       } 
-      
+      document.getElementById("btnEnviar").onclick = function () {
+        var status = new Array();
+        
+            document.querySelectorAll('input[name="opciones1"]', ).forEach(function (el) {
+
+                if (el.checked) {
+                  
+                  
+
+                    status.push("Clientes " +el.value);
+                }
+            })
+            document.querySelectorAll('input[name="opciones2"]', ).forEach(function (el) {
+
+            if (el.checked) {
+  
+
+                   status.push("Vista " +el.value);
+}
+})
+          document.querySelectorAll('input[name="opciones3"]', ).forEach(function (el) {
+
+            if (el.checked) {
+  //a
+
+                  status.push("Proc " +el.value);
+} 
+})
+        
+
+        var toPost = JSON.stringify(status);
+        document.querySelector('textarea').value = toPost
+    };
     });
 });
+
+
 </script>
-</div>
-
-<div id="click">
-
-   <input type="submit" name="a" value="Generar API">
-    
-   </div>
-
-<div id="itse">
-  
-
-<table class="table">
-   <thead class="thead-dark">
-    <tr>
-      <th scope="col">Items selected</th>
-    </tr>
-   </table>
-   </div>
-<div id="apigenerada">
-<h6>API generada</h6>
-
-<textarea id="message" placeholder="Here will be the API"></textarea>
-  
-</div>
-        </div>
-    </body>
-</html>

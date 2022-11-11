@@ -16,17 +16,41 @@ class apicontroller extends Controller
     { 
         $texto=trim($request->get('texto'));
         $idc=DB::table('cliente')
-                   ->select('id')
+                   ->select('id', 'nombre')
                    ->get();
         $idv=DB::table('vista')
-                   ->select('id')
+                   ->select('id', 'nombre')
                    ->get();
         $idp=DB::table('procedimientos')
-                   ->select('id')
+                   ->select('id', 'nombre')
                    ->get();
+
+        
+        
+                   
+
+                 
+
+         
+
+
+               
+       
+
+
+
+
        
         return view('apigen.index',compact('idc','idv','idp'));
+
+        
+        
+       
+              
+        
+
         
         
     }
+    
 }

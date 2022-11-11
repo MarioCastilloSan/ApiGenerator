@@ -23,4 +23,3 @@ Route::get('/', function () {
 
 Route::resource('/cliente',ClienteController::class);
 Route::resource('/apigen',apicontroller::class);
-return redirect()->to('/apigen');
