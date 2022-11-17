@@ -19,6 +19,11 @@ Route::get('/', function () {
 Route::get('phpinfo', function () {
     phpinfo();
 })->name('phpmyinfo');
+
+
+
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

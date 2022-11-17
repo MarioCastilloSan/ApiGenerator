@@ -17,7 +17,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 //API LOGIN AND REGISTER USER FOR TOKEN
-Route::group([ 'middleware' => 'api'], function ($router) {
+Route::group([ 'middleware' => 'api', 'prefix' => 'auth' ], function ($router) {
 
     Route::post('login', 'AuthController@login');
     Route::post('logout', 'AuthController@logout');
