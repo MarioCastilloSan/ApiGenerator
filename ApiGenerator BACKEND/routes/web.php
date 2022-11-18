@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/doc', function () {
+    return view('documentation');
+});
 
 Route::get('phpinfo', function () {
     phpinfo();
